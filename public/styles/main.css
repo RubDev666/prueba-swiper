@@ -1,0 +1,399 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --rojo-principal: #ff004f;
+    --oscuro-claro: #222;
+    --text-white: #fff;
+    --body-color: #2b2537;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+*::selection {
+    color: var(--text-white); 
+    background: var(--rojo-principal);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-white);
+    background-color: var(--oscuro-claro);
+}*/
+
+/*-----------color de la barra de scroll ------------------ 
+body::-webkit-scrollbar {
+    width: 13px;
+    background-color: var(--oscuro-claro);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--rojo-principal);
+    border-radius: 30px;
+}*/
+
+/*----------PARA  CENTRAR EL CONTENIDO GENERAL AL MISMO MARGEN -----
+.centrado {
+    margin: 0 10%;
+} */
+
+/*--------------------------------------- FONDO PRINCIPAL CON LA ANIMACION DE LA PELOTA ----*/
+
+.fondo {
+    background-color: var(--body-color);
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: -100;
+    overflow: hidden;
+}
+
+.rampa {
+    background-color: var(--rojo-principal);
+    position: absolute;
+    bottom: -500px;
+    right: 0;
+    width: 100%;
+    height: 500px;
+    transform: skewY(-30deg);
+    opacity: .8;
+}
+
+.pelota {
+    width: 170px;
+    height: 170px;
+    background-color: var(--text-white);
+    box-shadow: 0px 0px 30px var(--text-white);
+    border-radius: 100%;
+    animation-name: pelota;
+	animation-duration: 4s;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: -170px;
+    right: 0;
+    opacity: 0;
+}
+
+@keyframes pelota {
+    0% {
+        transform: skewY(30deg);
+        left: 1600px;
+    }
+
+    50%{
+        transform: skewY(30deg);
+    }
+
+    100%{
+        transform: skewY(5deg);
+        left: -300px;
+    }
+}
+
+.circle-blur {
+    background-color: var(--text-white);
+    position: absolute;
+    left: -50px;
+    bottom: -560px;
+    border-radius: 100%;
+    filter: blur(90px);
+    width: 550px;
+    height: 550px;
+}
+
+/*-------------------------------------------- HEADER NAV ---------------------*/
+
+#header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 60px;
+    z-index: 500;
+    background-color: var(--oscuro-claro);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+nav .logo {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+nav .logo span {
+    color: var(--rojo-principal);
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 2px 10px;
+}
+
+nav ul li a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 18px;
+    border: solid 2px transparent;
+    padding: 5px 25px;
+    transition: border .3s ease-in-out;
+}
+
+nav ul li a:hover {
+    border-color: var(--rojo-principal);
+}
+
+/*---------- EL COLOR DEL LINK SEGUN LA SECCION QUE ESTEMOS VISITANDO -------- */
+.active {
+    border: solid 2px var(--rojo-principal);
+    color: var(--rojo-principal);
+}
+
+/*---------------------- ICONOS DEL MENU RESPONSIVE ------ */
+nav .btn-close,
+nav .btn-open{
+    display: none;
+    font-size: 40px;
+    transition: all .3s ease-in-out;
+}
+
+nav .btn-close:hover,
+nav .btn-open:hover {
+    text-shadow: 0px 0px 30px var(--rojo-principal);
+    color: var(--rojo-principal);
+    cursor: pointer;
+}
+
+/*------------------------------- main - apartado principal --------- */
+
+#main {
+    width: 100%;
+    /*height: 100vh;*/
+    overflow: hidden; /* para que no se desborde por el scrollreveal */
+}
+
+.main-container {
+    opacity: 0;
+    transition: opacity .9s ease-in-out;
+}
+
+.presentacion {
+    margin: 180px 0 0px;
+    padding-bottom: 20vh;
+}
+
+.presentacion h1 {
+    font-weight: 600;
+    font-size: 70px;
+    position: relative;
+    top: -100px;
+    transition: top 1.2s ease-in-out;
+}
+
+.oficio-reveal {
+    position: relative;
+    left: -600px;
+    transition: left 1.2s ease-in-out;
+}
+
+.texto-reveal {
+    position: relative;
+    right: -500px;
+    transition: right 1.2s ease-in-out;
+}
+
+.hola-reveal span {
+    color: var(--rojo-principal);
+    text-decoration: underline;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity .9s ease-in-out;
+}
+
+.presentacion h2 {
+    margin: 0px 0 70px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.presentacion h4 {
+    width: 60%;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.btn-reveal {
+    margin: 50px 0;
+    position: relative;
+    bottom: -500px;
+    transition: bottom 1.2s ease-in-out;
+}
+
+.btn {
+    color: var(--text-white);
+    text-decoration: none;
+    padding: 10px 14px;
+    text-align: center;
+    transition: all .3s ease;
+    font-size: 20px;
+    font-weight: 500;
+    border: solid 2px var(--rojo-principal);
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 30px var(--rojo-principal);
+    background-color: var(--rojo-principal);
+}
+
+/*----------------------------------------- RESPONSIVE HEADER AND MAIN ------------ */
+@media screen and (max-width: 1299px){
+    nav ul li {
+        margin: 2px 7px;
+    }
+    
+    nav ul li a {
+        padding: 5px 20px;
+    }
+}
+
+@media screen and (max-width: 1099px){
+    .circle-blur {
+        left: -90px;
+    }
+
+    #header {
+        height: auto;
+    }
+    
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 2px 5px;
+    }
+    
+    nav ul li a {
+        padding: 5px 15px;
+    }
+
+    .presentacion h1 {
+        font-size: 60px;
+    }
+    
+    .presentacion h2 {
+        margin: 0px 0 40px;
+        font-size: 22px;
+    }
+    
+    .presentacion h4 {
+        font-size: 17px;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 729px){
+    .circle-blur {
+        left: -160px;
+    }
+
+    nav .btn-open {
+        display: block;
+        position: absolute; /*---ligero desborde por el hover, por eso el position-- */
+        right: 10%;
+        font-size: 30px;
+    }
+
+    nav {
+        flex-direction: row;
+        padding: 13px 0;
+    }
+
+    nav ul {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: var(--oscuro-claro);
+        top: 0;
+        padding: 20px 50px;
+        width: 400px;
+        height: 80vh;
+        gap: 20px;
+        right: -400px;
+        z-index: 600;
+        transition: right .4s ease-in-out;
+    }
+
+    #sidemenu.show-navbar {
+        right: 0;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+        padding: 10px 20px;
+        display: block;
+    }
+
+    nav .btn-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 30px;
+    }
+
+    .fondo-opacity {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+        opacity: .7;
+        position: absolute;
+    }
+
+    .fondo-opacity.show{
+        display: block;
+    }
+
+    .presentacion h4 {
+        font-size: 17px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 399px){
+    nav ul {
+        width: 100%;
+    }
+
+    .presentacion h1 {
+        font-size: 50px;
+    }
+    
+    .presentacion h2 {
+        margin: 0px 0 30px;
+        font-size: 18px;
+    }
+    
+    .presentacion h4 {
+        font-size: 14px;
+    }
+}

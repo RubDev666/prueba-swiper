@@ -1,0 +1,38 @@
+/*-----------------FOOTER PAGINA ------------ */
+footer {
+    background-color: var(--oscuro-claro);
+    padding: 20px;
+    text-align: center;
+}
+
+footer .remarcar-rojo {
+    font-weight: 800;
+    color: var(--rojo-principal);
+}
+
+footer .remarcar {
+    font-weight: 800;
+}
+
+/*-------------- FOOTER ASIDE MENU -----------*/
+.footer-aside {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 17px;
+    display: none;
+}
+.remarcar-rojo {
+    font-weight: 800;
+    color: var(--rojo-principal);
+}
+
+.remarcar {
+    font-weight: 800;
+}
+
+@media screen and (max-width: 729px) {
+    .footer-aside {
+        display: block;
+    }
+}

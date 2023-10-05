@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --rojo-principal: #ff004f;
+    --oscuro-claro: #222;
+    --text-white: #fff;
+    --body-color: #2b2537;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+*::selection {
+    color: var(--text-white); 
+    background: var(--rojo-principal);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-white);
+    background-color: var(--oscuro-claro);
+}
+
+/*-----------color de la barra de scroll ------------------ */
+body::-webkit-scrollbar {
+    width: 13px;
+    background-color: var(--oscuro-claro);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--rojo-principal);
+    border-radius: 30px;
+}
+
+/*----------PARA  CENTRAR EL CONTENIDO GENERAL AL MISMO MARGEN -----*/
+.centrado {
+    margin: 0 10%;
+}
+
+swiper-container {
+    background-color: rgb(155, 87, 87);
+    height: 200px;
+}
+
+#puto {
+    background-color: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choto {
+    background-color: #ff004f;
+    width: 70%;
+}
+
+swiper-container::part(button-prev) {
+    background-color: rgb(0, 0, 0);
+    color: red;
+  }

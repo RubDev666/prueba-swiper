@@ -1,0 +1,254 @@
+/*----------------------------------estilos generales de la seccion about --------------- */
+#about {
+    /**background-color: var(--body-color);*/
+    width: 100%;
+    /**padding: 5% 0;*/
+    padding: 50px 0;
+}
+
+.about-container {
+    padding: 5% 0;
+    background-color: rgb(61, 61, 61, 0.7);
+}
+
+.titulo-btns-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-btns-contenedor h3 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.btns-about {
+    border: solid 2px var(--rojo-principal);
+}
+
+.btns-about button {
+    padding: 10px 20px;
+    border: none;
+    color: var(--text-white);
+    background: transparent;
+    font-size: 20px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.btns-about .seleccionado {
+    box-shadow: 0px 0px 30px var(--rojo-principal);
+    background-color: var(--rojo-principal);
+}
+
+
+/*----------------------------- contenedor que contiene la info de cada boton ------------ */
+.info-about-container {
+    margin: 0% 5%;
+    padding: 40px;
+}
+
+/*------------------------------------------ estilo contenido de skills ------------- */
+.about-element {
+    display: none;
+}
+
+.about-element.mostrar-about {
+    display: flex;
+}
+
+.about-element.skills {
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.about-element.skills h3 {
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+.lista-habilidades {
+    margin-right: 40px;
+}
+
+.lista-habilidades ul  li {
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.tecnologias {
+    text-align: center;
+}
+
+.tecnologias-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-tecnologia {
+    width: 100px;
+    height: 100px;
+    background-color: var(--text-white);
+    padding: 10px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px var(--text-white);
+}
+
+.img-tecnologia img {
+    width: 100%;
+}
+
+/*------------------------- estilo contenido de experiencia y education ------------- */
+.about-element.experience,
+.about-element.education {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-element.experience h3,
+.about-element.education h3 {
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+.about-element.experience ul,
+.about-element.education ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-element.experience ul li,
+.about-element.education ul li {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.about-element.experience ul li span,
+.about-element.education ul li span {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.about-element.education ul li .academia-span {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: var(--text-white);
+}
+
+/*-------------------------------------- about responsive ---------------- */
+@media screen and (max-width: 1375px){
+    .tecnologias {
+        width: 410px;
+    }
+}
+
+@media screen and (max-width: 1260px){
+    .lista-habilidades ul  li {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 1180px){
+    .img-tecnologia {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .tecnologias {
+        width: 400px;
+    }
+
+    .img-tecnologia {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .about-element.skills {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .about-element.skills h3,
+    .about-element.experience h3,
+    .about-element.education h3 {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+
+    .lista-habilidades {
+        margin-right: 0;
+    }
+    
+    .lista-habilidades ul  li {
+        line-height: 30px;
+        font-weight: 500;
+    }
+
+    .tecnologias {
+        width: auto;
+    }
+
+    .tecnologias h3 {
+        text-align: center;
+    }
+
+    .img-tecnologia {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .btns-about button {
+        padding: 10px 10px;
+        font-size: 15px;
+    }
+    
+    .info-about-container {
+        padding: 40px 0;
+    }
+
+    .about-element.experience,
+    .about-element.education,
+    .lista-habilidades {
+        padding: 0 20px;
+    }
+
+    .about-element.experience ul li,
+    .about-element.education ul li {
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .about-element.experience ul li span,
+    .about-element.education ul li span {
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    .about-element.education ul li .academia-span {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: var(--text-white);
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .btns-about button {
+        padding: 10px 10px;
+        font-size: 13px;
+    }
+}
